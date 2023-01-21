@@ -8,11 +8,16 @@ import JsToPythonPage from "./pages/JsToPythonPage";
 import MarvChatBotPage from "./pages/MarvChatBotPage";
 import QAPage from "./pages/QAPage";
 import SecondGraderSummaryPage from "./pages/SecondGraderSummaryPage";
+import {useSelector} from "react-redux";
+import Spinner from "./components/Spinner";
 
 function App() {
 
+    const isLoading = useSelector((state) => state.ui.isLoading);
+
     return (
             <Router>
+                {isLoading && <Spinner/>}
                 <Routes>
                     <Route path="/" element={<MainPage />}/>
                     <Route path="/dall-e" element={<DallEPage/>}/>

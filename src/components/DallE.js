@@ -1,24 +1,24 @@
 import React, {useState} from 'react';
 import {openai} from "../Config/openApiConfiguration";
+import {uiActions} from "../store/ui";
+import {useDispatch} from "react-redux";
 
 const DallE = () => {
 
     const [image, setImage] = useState("");
     const [prompt, setPrompt] = useState("")
-
+    const dispatch = useDispatch();
 
     const generateImage = async () => {
-        const response = await openai.createImage({
-            // model: "text-davinchi-002",
-            // prompt: "This is a test",
-            // temperature: 0,
-            // max_tokens: 6,
-            prompt: `${prompt}`,
-            n: 2,
-            size: "1024x1024",
-        })
-        setImage(response.data.data[0].url);
-    }
+            dispatch(uiActions.setIsLoading(true));
+            const response = await openai.createImage({
+                prompt: `${prompt}`,
+                n: 2,
+                size: "512x512",
+            })
+            setImage(response.data.data[0].url);
+            dispatch(uiActions.setIsLoading(false));
+        }
 
     return (
         <div>
