@@ -1,43 +1,30 @@
-import { Configuration, OpenAIApi } from "openai";
-import './App.css';
-import {useState} from "react";
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import MainPage from "./pages/MainPage";
+import DallEPage from "./pages/DallEPage";
+import EnglishToOtherPage from "./pages/EnglishToOtherPage";
+import HorrorStoryCreatorPage from "./pages/HorrorStoryCreatorPage";
+import InterviewPage from "./pages/InterviewPage";
+import JsToPythonPage from "./pages/JsToPythonPage";
+import MarvChatBotPage from "./pages/MarvChatBotPage";
+import QAPage from "./pages/QAPage";
+import SecondGraderSummaryPage from "./pages/SecondGraderSummaryPage";
 
 function App() {
 
-  const [image, setImage] = useState("");
-    const [prompt, setPrompt] = useState("")
-
-  const configuration = new Configuration({
-     organization: "org-iw4ja26Oph0uy3PIFUNr56hK",
-    apiKey: process.env.REACT_APP_API_KEY
-  });
-  const openai = new OpenAIApi(configuration);
-
-  const generateImage = async () => {
-    const response = await openai.createImage({
-      // model: "text-davinchi-002",
-      // prompt: "This is a test",
-      // temperature: 0,
-      // max_tokens: 6,
-      prompt: `${prompt}`,
-      n: 2,
-      size: "1024x1024",
-    })
-    setImage(response.data.data[0].url);
-  }
-
     return (
-        <div>
-            <input onChange={(e) => setPrompt(e.target.value)}
-                   placeholder="Enter description of an image"
-            />
-            <button onClick={generateImage}>
-                Generate an image
-            </button>
-            <div>
-                <img src={image} alt=""/>
-            </div>
-        </div>
+            <Router>
+                <Routes>
+                    <Route path="/" element={<MainPage />}/>
+                    <Route path="/dall-e" element={<DallEPage/>}/>
+                    <Route path="/english-to-other" element={<EnglishToOtherPage />}/>
+                    <Route path="/horror-story-creator" element={<HorrorStoryCreatorPage />}/>
+                    <Route path="/interview" element={<InterviewPage />}/>
+                    <Route path="/js-to-python" element={<JsToPythonPage />}/>
+                    <Route path="/marv-chat-bot" element={<MarvChatBotPage />}/>
+                    <Route path="/qa" element={<QAPage />}/>
+                    <Route path="/second-grader-summary" element={<SecondGraderSummaryPage />}/>
+                </Routes>
+            </Router>
     );
 }
 
