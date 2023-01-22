@@ -1,17 +1,27 @@
 import React, {useState} from 'react';
+import {Link, useNavigate} from "react-router-dom";
 import {
     analysisText, answeringText, completionText, conclusionText, eighthNavText,
     fifthNavText, firstNavText, fourthNavText, generationText, headerExampleText, secondNavText,
     seventhNavText, sixthNavText, summarizationText, thirdNavText, translationText
 } from "../constants/texts";
-import {contentHeaderClass, navBarClass, navigationItemClass, navigationItemFirstClass} from "../constants/cssClasses";
-import {useNavigate} from "react-router-dom";
+import {contentHeaderClass, navBarClass, navigationItemClass, navigationItemFirstClass
+} from "../constants/cssClasses";
+
 import HamburgerIcon from "../components/HamburgerIcon";
+import DallE from "../components/DallE";
+import EnglishToOther from "../components/EnglishToOther";
+import HorrorStoryCreator from "../components/HorrorStoryCreator";
+import Interview from "../components/Interview";
+import JsToPython from "../components/JsToPython";
+import MarvChatBot from "../components/MarvChatBot";
+import QA from "../components/QA";
+import SecondGraderSummary from "../components/SecondGraderSummary";
 
 const MainPage = () => {
 
-    let navigate = useNavigate();
     const [mobileNavbar, setMobileNavbar] = useState(false);
+    let navigate = useNavigate();
 
     const headerText = [
         {description: `${generationText}`, key: 0},
@@ -45,10 +55,10 @@ const MainPage = () => {
                 <div className={`${mobileNavbar? {navBarClass}: "hidden"}`}>
                     <nav className="relative space-y-8 mt-10">
                         <ul className="ml-0.5 space-y-2 border-l-2 border-slate-100 dark:border-slate-800" >
-                            <li><a className={navigationItemFirstClass} href="#dalle">{firstNavText}</a></li>
+                            <li><Link className={navigationItemFirstClass} reloadDocument to="#dalle">{firstNavText}</Link></li>
                             {navigationText.map(item => {
                                 return (
-                                    <li key={item.key}><a href={item.href} className={navigationItemClass}>{item.text}</a></li>
+                                    <li key={item.key}><Link reloadDocument to={item.href} className={navigationItemClass}>{item.text}</Link></li>
                                 );
                             })}
                         </ul>
@@ -60,14 +70,14 @@ const MainPage = () => {
                 <nav className="relative space-y-8 mt-10">
                     <button onClick={() => {navigate('../')}}>
                         <h5 className="mb-3 text-sm font-semibold text-slate-900 dark:text-slate-200">
-                            <a href="#header">OpenAI React Example App</a>
+                            <Link reloadDocument to="#header">OpenAI React Example App</Link>
                             </h5>
                     </button>
                     <ul className="ml-0.5 space-y-2 border-l-2 border-slate-100 dark:border-slate-800" data-hs-scrollspy="#scrollspy">
-                        <li><a className={navigationItemFirstClass} href="#dalle">{firstNavText}</a></li>
+                        <li><Link className={navigationItemFirstClass} reloadDocument to="#dalle">{firstNavText}</Link></li>
                         {navigationText.map(item => {
                             return (
-                                    <li key={item.key}><a href={item.href} className={navigationItemClass}>{item.text}</a></li>
+                                    <li key={item.key}><Link reloadDocument to={item.href} className={navigationItemClass}>{item.text}</Link></li>
                             );
                         })}
                     </ul>
@@ -100,34 +110,42 @@ const MainPage = () => {
                         <div id="scrollspy" className="space-y-10 md:space-y-16">
                             <div id="dalle" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{firstNavText}</h2>
+                                <DallE/>
                             </div>
 
                             <div id="english" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{secondNavText}</h2>
+                                <EnglishToOther/>
                             </div>
 
                             <div id="horror" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{thirdNavText}</h2>
+                                <HorrorStoryCreator/>
                             </div>
 
                             <div id="interview" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{fourthNavText}</h2>
+                                <Interview/>
                             </div>
 
                             <div id="js2py" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{fifthNavText}</h2>
+                                <JsToPython/>
                             </div>
 
                             <div id="marv" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{sixthNavText}</h2>
+                                <MarvChatBot/>
                             </div>
 
                             <div id="qa" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{seventhNavText}</h2>
+                                <QA/>
                             </div>
 
                             <div id="summarize" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{eighthNavText}</h2>
+                                <SecondGraderSummary/>
                             </div>
                         </div>
                     </div>
