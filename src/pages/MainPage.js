@@ -110,42 +110,66 @@ const MainPage = () => {
                         <div id="scrollspy" className="space-y-10 md:space-y-16">
                             <div id="dalle" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{firstNavText}</h2>
-                                <DallE/>
+                                <div className="ml-4">
+                                    <DallE/>
+                                </div>
+
                             </div>
 
                             <div id="english" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{secondNavText}</h2>
-                                <EnglishToOther/>
+                                <div>
+                                    <EnglishToOther/>
+                                </div>
+
                             </div>
 
                             <div id="horror" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{thirdNavText}</h2>
-                                <HorrorStoryCreator/>
+                                <div>
+                                    <HorrorStoryCreator/>
+                                </div>
+
                             </div>
 
                             <div id="interview" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{fourthNavText}</h2>
-                                <Interview/>
+                                <div>
+                                    <Interview/>
+                                </div>
+
                             </div>
 
                             <div id="js2py" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{fifthNavText}</h2>
-                                <JsToPython/>
+                                <div>
+                                    <JsToPython/>
+                                </div>
+
                             </div>
 
                             <div id="marv" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{sixthNavText}</h2>
-                                <MarvChatBot/>
+                                <div>
+                                    <MarvChatBot/>
+                                </div>
+
                             </div>
 
                             <div id="qa" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{seventhNavText}</h2>
-                                <QA/>
+                                <div>
+                                    <QA/>
+                                </div>
+
                             </div>
 
                             <div id="summarize" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{eighthNavText}</h2>
-                                <SecondGraderSummary/>
+                                <div>
+                                    <SecondGraderSummary/>
+                                </div>
+
                             </div>
                         </div>
                     </div>
