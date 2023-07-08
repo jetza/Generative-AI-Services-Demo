@@ -31,8 +31,10 @@ const ObjectRecognition = () => {
                 const result = await response.json();
                 console.log(result)
                 const values = result.map((item) => item.label);
-                setObject(values);
-                console.log(object)
+                let uniqueValues = [...new Set(values)];
+                console.log(uniqueValues);
+                setObject(uniqueValues);
+
             } else {
                 const errorText = await response.text();
                 console.log(errorText);
@@ -65,9 +67,10 @@ const ObjectRecognition = () => {
                     />
                     <div className="pt-4 pb-4 mt-2 text-lg text-gray-800 dark:text-gray-400">
                         <p>This object could be: </p>
-                        {object.map((value, index) => (
+                        {Array.isArray(object)
+                            ? object?.map((value, index) => (
                             <p key={index}>{value}</p>
-                        ))}
+                        )): null}
                     </div>
 
                 </div>

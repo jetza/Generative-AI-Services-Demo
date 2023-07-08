@@ -63,9 +63,10 @@ const ImageToText = () => {
                     />
                     <div className="pt-4 pb-4 mt-2 text-lg text-gray-800 dark:text-gray-400">
                         <p>Words found in this picture: </p>
-                        {text.map((value, index) => (
+                        {Array.isArray(text)
+                            ? text.map((value, index) => (
                             <p key={index}>{value}</p>
-                        ))}
+                            )): null}
                     </div>
 
                 </div>
