@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import {
     analysisText, answeringText, completionText, conclusionText, eighthNavText,
-    fifthNavText, firstNavText, fourthNavText, generationText, headerExampleText, secondNavText,
+    fifthNavText, firstNavText, fourthNavText, generationText, headerExampleText, imageToTextText, secondNavText,
     seventhNavText, sixthNavText, summarizationText, thirdNavText, translationText
 } from "../constants/texts";
 import {contentHeaderClass, navBarClass, navigationItemClass, navigationItemFirstClass
@@ -11,7 +11,7 @@ import {contentHeaderClass, navBarClass, navigationItemClass, navigationItemFirs
 import HamburgerIcon from "../components/HamburgerIcon";
 import DallE from "../components/DallE";
 import ImageToText from "../components/ImageToText";
-// import HorrorStoryCreator from "../components/HorrorStoryCreator";
+import ObjectRecognition from "../components/ObjectRecognition";
 // import Interview from "../components/Interview";
 // import JsToPython from "../components/JsToPython";
 // import MarvChatBot from "../components/MarvChatBot";
@@ -111,7 +111,11 @@ const MainPage = () => {
                             <div id="dalle" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{firstNavText}</h2>
                                 <div className="ml-4">
-                                    <DallE/>
+                                    <div className="mt-2 text-lg text-gray-800 dark:text-gray-400">
+                                        <p>{imageToTextText}</p>
+                                        <br/>
+                                        <DallE/>
+                                    </div>
                                 </div>
 
                             </div>
@@ -124,13 +128,13 @@ const MainPage = () => {
 
                             </div>
 
-                            {/*<div id="horror" className="scroll-mt-24 min-h-[25rem]">*/}
-                            {/*    <h2 className={contentHeaderClass}>{thirdNavText}</h2>*/}
-                            {/*    <div>*/}
-                            {/*        <HorrorStoryCreator/>*/}
-                            {/*    </div>*/}
+                            <div id="horror" className="scroll-mt-24 min-h-[25rem]">
+                                <h2 className={contentHeaderClass}>{thirdNavText}</h2>
+                                <div>
+                                    <ObjectRecognition/>
+                                </div>
 
-                            {/*</div>*/}
+                            </div>
 
                             {/*<div id="interview" className="scroll-mt-24 min-h-[25rem]">*/}
                             {/*    <h2 className={contentHeaderClass}>{fourthNavText}</h2>*/}
