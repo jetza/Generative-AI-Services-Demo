@@ -10,13 +10,13 @@ import {contentHeaderClass, navBarClass, navigationItemClass, navigationItemFirs
 
 import HamburgerIcon from "../components/HamburgerIcon";
 import DallE from "../components/DallE";
-import EnglishToOther from "../components/EnglishToOther";
-import HorrorStoryCreator from "../components/HorrorStoryCreator";
-import Interview from "../components/Interview";
-import JsToPython from "../components/JsToPython";
-import MarvChatBot from "../components/MarvChatBot";
-import QA from "../components/QA";
-import SecondGraderSummary from "../components/SecondGraderSummary";
+import ImageToText from "../components/ImageToText";
+// import HorrorStoryCreator from "../components/HorrorStoryCreator";
+// import Interview from "../components/Interview";
+// import JsToPython from "../components/JsToPython";
+// import MarvChatBot from "../components/MarvChatBot";
+// import QA from "../components/QA";
+// import SecondGraderSummary from "../components/SecondGraderSummary";
 
 const MainPage = () => {
 
@@ -119,58 +119,58 @@ const MainPage = () => {
                             <div id="english" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{secondNavText}</h2>
                                 <div>
-                                    <EnglishToOther/>
+                                    <ImageToText/>
                                 </div>
 
                             </div>
 
-                            <div id="horror" className="scroll-mt-24 min-h-[25rem]">
-                                <h2 className={contentHeaderClass}>{thirdNavText}</h2>
-                                <div>
-                                    <HorrorStoryCreator/>
-                                </div>
+                            {/*<div id="horror" className="scroll-mt-24 min-h-[25rem]">*/}
+                            {/*    <h2 className={contentHeaderClass}>{thirdNavText}</h2>*/}
+                            {/*    <div>*/}
+                            {/*        <HorrorStoryCreator/>*/}
+                            {/*    </div>*/}
 
-                            </div>
+                            {/*</div>*/}
 
-                            <div id="interview" className="scroll-mt-24 min-h-[25rem]">
-                                <h2 className={contentHeaderClass}>{fourthNavText}</h2>
-                                <div>
-                                    <Interview/>
-                                </div>
+                            {/*<div id="interview" className="scroll-mt-24 min-h-[25rem]">*/}
+                            {/*    <h2 className={contentHeaderClass}>{fourthNavText}</h2>*/}
+                            {/*    <div>*/}
+                            {/*        <Interview/>*/}
+                            {/*    </div>*/}
 
-                            </div>
+                            {/*</div>*/}
 
-                            <div id="js2py" className="scroll-mt-24 min-h-[25rem]">
-                                <h2 className={contentHeaderClass}>{fifthNavText}</h2>
-                                <div>
-                                    <JsToPython/>
-                                </div>
+                            {/*<div id="js2py" className="scroll-mt-24 min-h-[25rem]">*/}
+                            {/*    <h2 className={contentHeaderClass}>{fifthNavText}</h2>*/}
+                            {/*    <div>*/}
+                            {/*        <JsToPython/>*/}
+                            {/*    </div>*/}
 
-                            </div>
+                            {/*</div>*/}
 
-                            <div id="marv" className="scroll-mt-24 min-h-[25rem]">
-                                <h2 className={contentHeaderClass}>{sixthNavText}</h2>
-                                <div>
-                                    <MarvChatBot/>
-                                </div>
+                            {/*<div id="marv" className="scroll-mt-24 min-h-[25rem]">*/}
+                            {/*    <h2 className={contentHeaderClass}>{sixthNavText}</h2>*/}
+                            {/*    <div>*/}
+                            {/*        <MarvChatBot/>*/}
+                            {/*    </div>*/}
 
-                            </div>
+                            {/*</div>*/}
 
-                            <div id="qa" className="scroll-mt-24 min-h-[25rem]">
-                                <h2 className={contentHeaderClass}>{seventhNavText}</h2>
-                                <div>
-                                    <QA/>
-                                </div>
+                            {/*<div id="qa" className="scroll-mt-24 min-h-[25rem]">*/}
+                            {/*    <h2 className={contentHeaderClass}>{seventhNavText}</h2>*/}
+                            {/*    <div>*/}
+                            {/*        <QA/>*/}
+                            {/*    </div>*/}
 
-                            </div>
+                            {/*</div>*/}
 
-                            <div id="summarize" className="scroll-mt-24 min-h-[25rem]">
-                                <h2 className={contentHeaderClass}>{eighthNavText}</h2>
-                                <div>
-                                    <SecondGraderSummary/>
-                                </div>
+                            {/*<div id="summarize" className="scroll-mt-24 min-h-[25rem]">*/}
+                            {/*    <h2 className={contentHeaderClass}>{eighthNavText}</h2>*/}
+                            {/*    <div>*/}
+                            {/*        <SecondGraderSummary/>*/}
+                            {/*    </div>*/}
 
-                            </div>
+                            {/*</div>*/}
                         </div>
                     </div>
                 </div>

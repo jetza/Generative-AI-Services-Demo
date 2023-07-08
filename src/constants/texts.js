@@ -15,7 +15,7 @@ export const analysisText = 'Sentiment Analysis: The Sentiment Analysis models a
 export const conclusionText = 'All these examples on the OpenAI website are interactive, and user can try and experiment with the different models available. ' +
     'The website also provides API access and code samples that developers can use to integrate the models into their own applications.'
 export const firstNavText = 'Dall-E'
-export const secondNavText = 'English to other'
+export const secondNavText = 'Image To Text'
 export const thirdNavText = 'Micro horror story creator'
 export const fourthNavText = 'Interview questions'
 export const fifthNavText = 'JavaScript to Python'
