@@ -3,6 +3,7 @@ import {openai} from "../Config/openApiConfiguration";
 import {uiActions} from "../store/ui";
 import {useDispatch} from "react-redux";
 import "../styles/global.css";
+import {requestButtonClass} from "../constants/cssClasses";
 
 const DallE = () => {
 
@@ -30,8 +31,8 @@ const DallE = () => {
             <div className="flex">
                 <button type="button"
                         onClick={generateImage}
-                        className="inline-block px-6 py-2.5 bg-slate-900 bg-opacity-50 ring-0 ring-gray-300 hover:ring-8 ring-opacity-50 duration-200 shadow-md mt-10
-                        font-medium text-xs text-white leading-tight uppercase rounded shadow-md hover:bg-slate-700 hover:shadow-lg active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">
+                        className={requestButtonClass}
+                >
                     Generate an image
                 </button>
             </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { IMAGE_TO_TEXT_URL } from "../Config/apiNinjasConfiguration";
+import {requestButtonClass} from "../constants/cssClasses";
 
 const ImageToText = () => {
     const [selectedFile, setSelectedFile] = useState(null);
@@ -28,7 +29,6 @@ const ImageToText = () => {
 
             if (response.ok) {
                 const result = await response.json();
-                console.log(result?.text)
                 const values = result.map((item) => item.text);
                 setText(values);
             } else {
@@ -50,8 +50,7 @@ const ImageToText = () => {
             />
             <button
                 onClick={handleRequest}
-                className="inline-block px-6 py-2.5 bg-slate-900 bg-opacity-50 ring-0 ring-gray-300 hover:ring-8 ring-opacity-50 duration-200 shadow-md mt-10
-                        font-medium text-xs text-white leading-tight uppercase rounded shadow-md hover:bg-slate-700 hover:shadow-lg active:bg-slate-800 active:shadow-lg transition duration-150 ease-in-out">
+                className={requestButtonClass}>
                 Make Request
             </button>
             {selectedFile && (
@@ -59,7 +58,7 @@ const ImageToText = () => {
                     <img
                         id="YOUR_IMAGE_FILE"
                         src={imageSource}
-                        alt="image"
+                        alt=" "
                         className="max-w-full border-2"
                     />
                     <div className="pt-4 pb-4 mt-2 text-lg text-gray-800 dark:text-gray-400">
