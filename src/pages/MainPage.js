@@ -12,11 +12,6 @@ import HamburgerIcon from "../components/HamburgerIcon";
 import DallE from "../components/DallE";
 import ImageToText from "../components/ImageToText";
 import ObjectRecognition from "../components/ObjectRecognition";
-// import Interview from "../components/Interview";
-// import JsToPython from "../components/JsToPython";
-// import MarvChatBot from "../components/MarvChatBot";
-// import QA from "../components/QA";
-// import SecondGraderSummary from "../components/SecondGraderSummary";
 
 const MainPage = () => {
 
@@ -32,8 +27,8 @@ const MainPage = () => {
         {description: `${analysisText}`, key: 5}
     ];
     const navigationText = [
-        {text: `${secondNavText}`, key: 0, href: "#english"},
-        {text: `${thirdNavText}`, key: 1, href: "#horror"},
+        {text: `${secondNavText}`, key: 0, href: "#i2t"},
+        {text: `${thirdNavText}`, key: 1, href: "#object-rec"},
         {text: `${fourthNavText}`, key: 2, href: "#interview"},
         {text: `${fifthNavText}`, key: 3, href: "#js2py"},
         {text: `${sixthNavText}`, key: 4, href: "#marv"},
@@ -120,7 +115,7 @@ const MainPage = () => {
 
                             </div>
 
-                            <div id="english" className="scroll-mt-24 min-h-[25rem]">
+                            <div id="i2t" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{secondNavText}</h2>
                                 <div>
                                     <ImageToText/>
@@ -128,7 +123,7 @@ const MainPage = () => {
 
                             </div>
 
-                            <div id="horror" className="scroll-mt-24 min-h-[25rem]">
+                            <div id="object-rec" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{thirdNavText}</h2>
                                 <div>
                                     <ObjectRecognition/>
