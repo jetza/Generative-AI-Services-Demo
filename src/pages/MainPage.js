@@ -12,6 +12,7 @@ import HamburgerIcon from "../components/HamburgerIcon";
 import DallE from "../components/DallE";
 import ImageToText from "../components/ImageToText";
 import ObjectRecognition from "../components/ObjectRecognition";
+import Dictaphone from "../components/Dictaphone";
 
 const MainPage = () => {
 
@@ -29,7 +30,7 @@ const MainPage = () => {
     const navigationText = [
         {text: `${secondNavText}`, key: 0, href: "#i2t"},
         {text: `${thirdNavText}`, key: 1, href: "#object-rec"},
-        {text: `${fourthNavText}`, key: 2, href: "#interview"},
+        {text: `${fourthNavText}`, key: 2, href: "#dictaphone"},
         {text: `${fifthNavText}`, key: 3, href: "#js2py"},
         {text: `${sixthNavText}`, key: 4, href: "#marv"},
         {text: `${seventhNavText}`, key: 5, href: "#qa"},
@@ -131,13 +132,13 @@ const MainPage = () => {
 
                             </div>
 
-                            {/*<div id="interview" className="scroll-mt-24 min-h-[25rem]">*/}
-                            {/*    <h2 className={contentHeaderClass}>{fourthNavText}</h2>*/}
-                            {/*    <div>*/}
-                            {/*        <Interview/>*/}
-                            {/*    </div>*/}
+                            <div id="dictaphone" className="scroll-mt-24 min-h-[25rem]">
+                                <h2 className={contentHeaderClass}>{fourthNavText}</h2>
+                                <div>
+                                    <Dictaphone/>
+                                </div>
 
-                            {/*</div>*/}
+                            </div>
 
                             {/*<div id="js2py" className="scroll-mt-24 min-h-[25rem]">*/}
                             {/*    <h2 className={contentHeaderClass}>{fifthNavText}</h2>*/}

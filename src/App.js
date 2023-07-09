@@ -5,6 +5,7 @@ import ImageToTextPage from "./pages/ImageToTextPage";
 import {useSelector} from "react-redux";
 import Spinner from "./components/Spinner";
 import ObjectRecognitionPage from "./pages/ObjectRecognitionPage";
+import DictaphonePage from "./pages/DictaphonePage";
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
                     <Route path="/dall-e" element={<DallEPage/>}/>
                     <Route path="/image-to-text" element={<ImageToTextPage />}/>
                     <Route path="/object-recognition" element={<ObjectRecognitionPage />}/>
+                    <Route path="/speech-recognition" element={<DictaphonePage />}/>
                 </Routes>
             </Router>
     );
