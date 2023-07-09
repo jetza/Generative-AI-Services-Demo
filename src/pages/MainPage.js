@@ -13,6 +13,7 @@ import DallE from "../components/DallE";
 import ImageToText from "../components/ImageToText";
 import ObjectRecognition from "../components/ObjectRecognition";
 import Dictaphone from "../components/Dictaphone";
+import TextToSpeech from "../components/TextToSpeech";
 
 const MainPage = () => {
 
@@ -31,9 +32,9 @@ const MainPage = () => {
         {text: `${secondNavText}`, key: 0, href: "#i2t"},
         {text: `${thirdNavText}`, key: 1, href: "#object-rec"},
         {text: `${fourthNavText}`, key: 2, href: "#dictaphone"},
-        {text: `${fifthNavText}`, key: 3, href: "#js2py"},
+        {text: `${fifthNavText}`, key: 3, href: "#text2speech"},
         {text: `${sixthNavText}`, key: 4, href: "#marv"},
-        {text: `${seventhNavText}`, key: 5, href: "#qa"},
+        {text: `${seventhNavText}`, key: 5, href: "#js2py"},
         {text: `${eighthNavText}`, key: 6, href: "#summarize"}
     ];
 //TODO: make a new class from navBarClass to set navbar on mobile not to overlap when clicked on link
@@ -44,7 +45,7 @@ const MainPage = () => {
                     <button type="button"
                             className="flex justify-between gap-x-2 items-center w-full text-gray-500 hover:text-gray-600"
                             onClick={() => setMobileNavbar(!mobileNavbar)}>
-                        <span className="text-sm">OpenAI React Example App</span>
+                        <span className="text-sm">AI Services Demo React App</span>
                         <HamburgerIcon toggleNavbar={mobileNavbar}/>
                     </button>
                 </div>
@@ -66,7 +67,7 @@ const MainPage = () => {
                 <nav className="relative space-y-8 mt-10">
                     <button onClick={() => {navigate('../')}}>
                         <h5 className="mb-3 text-sm font-semibold text-slate-900 dark:text-slate-200">
-                            <Link reloadDocument to="#header">OpenAI React Example App</Link>
+                            <Link reloadDocument to="#header">AI Services Demo React App</Link>
                             </h5>
                     </button>
                     <ul className="ml-0.5 space-y-2 border-l-2 border-slate-100 dark:border-slate-800" data-hs-scrollspy="#scrollspy">
@@ -140,13 +141,12 @@ const MainPage = () => {
 
                             </div>
 
-                            {/*<div id="js2py" className="scroll-mt-24 min-h-[25rem]">*/}
-                            {/*    <h2 className={contentHeaderClass}>{fifthNavText}</h2>*/}
-                            {/*    <div>*/}
-                            {/*        <JsToPython/>*/}
-                            {/*    </div>*/}
-
-                            {/*</div>*/}
+                            <div id="text2speech" className="scroll-mt-24 min-h-[25rem]">
+                                <h2 className={contentHeaderClass}>{fifthNavText}</h2>
+                                <div>
+                                    <TextToSpeech/>
+                                </div>
+                            </div>
 
                             {/*<div id="marv" className="scroll-mt-24 min-h-[25rem]">*/}
                             {/*    <h2 className={contentHeaderClass}>{sixthNavText}</h2>*/}
