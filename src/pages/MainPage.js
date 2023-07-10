@@ -14,6 +14,7 @@ import ImageToText from "../components/ImageToText";
 import ObjectRecognition from "../components/ObjectRecognition";
 import Dictaphone from "../components/Dictaphone";
 import TextToSpeech from "../components/TextToSpeech";
+import TextToVideo from "../components/TextToVideo";
 
 const MainPage = () => {
 
@@ -33,7 +34,7 @@ const MainPage = () => {
         {text: `${thirdNavText}`, key: 1, href: "#object-rec"},
         {text: `${fourthNavText}`, key: 2, href: "#dictaphone"},
         {text: `${fifthNavText}`, key: 3, href: "#text2speech"},
-        {text: `${sixthNavText}`, key: 4, href: "#marv"},
+        {text: `${sixthNavText}`, key: 4, href: "#text2video"},
         {text: `${seventhNavText}`, key: 5, href: "#js2py"},
         {text: `${eighthNavText}`, key: 6, href: "#summarize"}
     ];
@@ -148,13 +149,13 @@ const MainPage = () => {
                                 </div>
                             </div>
 
-                            {/*<div id="marv" className="scroll-mt-24 min-h-[25rem]">*/}
-                            {/*    <h2 className={contentHeaderClass}>{sixthNavText}</h2>*/}
-                            {/*    <div>*/}
-                            {/*        <MarvChatBot/>*/}
-                            {/*    </div>*/}
+                            <div id="text2speech" className="scroll-mt-24 min-h-[25rem]">
+                                <h2 className={contentHeaderClass}>{sixthNavText}</h2>
+                                <div>
+                                    <TextToVideo/>
+                                </div>
 
-                            {/*</div>*/}
+                            </div>
 
                             {/*<div id="qa" className="scroll-mt-24 min-h-[25rem]">*/}
                             {/*    <h2 className={contentHeaderClass}>{seventhNavText}</h2>*/}
