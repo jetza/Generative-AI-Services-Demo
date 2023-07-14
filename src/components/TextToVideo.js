@@ -4,7 +4,8 @@ import {requestButtonClass} from "../constants/cssClasses";
 const TextToVideo = () => {
     const [type] = useState('text');
     const [subtitles, setSubtitles] = useState('false');
-    const [provider, setProvider] = useState({ type: 'microsoft', voice_id: 'en-US-JennyNeural' });
+    const [provider, setProvider] = useState('');
+    const [selectedVoice, setSelectedVoice] = useState('');
     const [input, setInput] = useState('Hello to all attends');
     const [ssml] = useState(false);
     const [config] = useState({ fluent: false, pad_audio: '0.0' });
@@ -12,9 +13,13 @@ const TextToVideo = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [talkId, setTalkId] = useState('');
     const [resultUrl, setResultUrl] = useState('');
+    const [voices, setVoices] = useState("Microsoft");
 
+    const onOptionChange = e => {
+        setProvider(e.target.value)
+
+    }
     const createVideoHandler = async () => {
-
         setIsLoading(true);
 
         const options = {
@@ -25,19 +30,16 @@ const TextToVideo = () => {
                 authorization: 'replace with api token'
             },
             body: JSON.stringify({
-                script: { type, subtitles, provider,  ssml, input },
+                script: { type, subtitles, type_: `${provider}`, voice_id: `${selectedVoice}`,  ssml, input },
                 config,
                 source_url: sourceUrl,
             })
         };
-
+console.log(selectedVoice)
         try {
             const response = await fetch('https://api.d-id.com/talks', options);
-            console.log(options)
-            console.log(response)
             const data = await response.json();
             setTalkId(data.id);
-            console.log(data);
         } catch (err) {
             console.log(err);
         } finally {
@@ -56,13 +58,34 @@ const TextToVideo = () => {
         try {
             const response = await fetch(`https://api.d-id.com/talks/${talkId}`, options);
             const data = await response.json();
-            setResultUrl(data.id);
-            console.log(data);
+            setResultUrl(data?.result_url);
         } catch (err) {
             console.log(err);
         } finally {
             setIsLoading(false);
         }
+    };
+
+    const getVoicesHandler = async () => {
+        const options = {
+            method: 'GET',
+            headers: {
+                accept: 'application/json',
+                authorization: 'replace with api token'
+            }
+        };
+        try {
+            const response = await fetch(`https://api.d-id.com/tts/voices?provider=${provider}`, options);
+            const data = await response.json();
+            setVoices(data);
+        } catch (err) {
+            console.log(err);
+        } finally {
+            setIsLoading(false);
+        }
+    };
+    const handleVoiceChange = e => {
+        setSelectedVoice(e.target.value);
     };
 
     return (
@@ -110,6 +133,69 @@ const TextToVideo = () => {
                     onChange={(e) => setSourceUrl(e.target.value)}
                 />
             </div>
+
+            <div className="my-4">
+                <h3 className="text-gray-700 mb-2">Select Provider</h3>
+                <div className="flex items-center">
+                    <input
+                        type="radio"
+                        name="provider"
+                        value="microsoft"
+                        id="microsoft"
+                        checked={provider === 'Microsoft'}
+                        onChange={onOptionChange}
+                        className="mr-2"
+                    />
+                    <label htmlFor="microsoft" className="label-checked:bg-red-600 text-gray-700 mr-4">
+                        Microsoft
+                    </label>
+
+                    <input
+                        type="radio"
+                        name="provider"
+                        value="amazon"
+                        id="amazon"
+                        checked={provider === 'Amazon'}
+                        onChange={onOptionChange}
+                        className="mr-2"
+                    />
+                    <label htmlFor="amazon" className="label-checked:bg-red-600 text-gray-700 mr-4">
+                        Amazon
+                    </label>
+                </div>
+
+                <div className="mt-4">
+                    <button
+                        className={requestButtonClass}
+                        onClick={getVoicesHandler}
+                        disabled={isLoading}
+                    >
+                        {isLoading ? 'Loading...' : 'Get voices'}
+                    </button>
+                </div>
+
+                <label className="text-gray-700">
+                    Select Voice
+                </label>
+
+                <div>
+                    <select
+                        value={selectedVoice}
+                        onChange={handleVoiceChange}
+                        className="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                    >
+                        <option value="">Select a voice</option>
+                        {Array.isArray(voices) &&
+                            voices.map((voice) => (
+                                <option key={voice.id} value={voice.id}>
+                                    {`${voice.id} - ${voice.name} (${voice.gender})`}
+                                </option>
+                            ))}
+                    </select>
+                </div>
+
+            </div>
+
             <div>
                 <button
                     className={requestButtonClass}
@@ -122,8 +208,8 @@ const TextToVideo = () => {
             <br/>
             <div>
                 <a
-                    href={resultUrl}
-                    download="Video link"
+                    href={resultUrl?.result_url}
+                    download={resultUrl?.result_url}
                     target="_blank"
                     rel="noreferrer"
                 >
@@ -132,7 +218,7 @@ const TextToVideo = () => {
                         onClick={getVideoHandler}
                         disabled={isLoading}
                     >
-                        'Get Video'
+                        {isLoading ? 'Downloading...' : 'Get Video'}
                     </button>
                 </a>
             </div>
