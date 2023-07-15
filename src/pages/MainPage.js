@@ -154,6 +154,9 @@ const MainPage = () => {
                                             <li><strong>Text Similarity</strong> - Compute text similarity score using the latest NLP machine learning models.</li>
                                         </ul>
                                         <br/>
+                                        <p>This is a demonstration of text detection in image uploaded from local machine.</p>
+                                        <p>After uploading an image and click on MAKE REQUEST button, all detected words from an image should appear at the bottom. </p>
+                                        <br/>
                                         <ImageToText/>
                                     </div>
                                 </div>
@@ -165,7 +168,8 @@ const MainPage = () => {
                                 <h2 className={contentHeaderClass}>{thirdNavText}</h2>
                                 <div className="ml-4">
                                     <div className="mt-2 text-lg text-gray-400">
-                                        <p></p>
+                                        <p>This is a demonstration of object detection in image uploaded from local machine, using API Ninjas service.</p>
+                                        <p>After uploading an image and click on MAKE REQUEST button, all assumptions for detected objects from an image should appear at the bottom. </p>
                                         <br/>
                                     <ObjectDetection/>
                                 </div>
@@ -177,7 +181,22 @@ const MainPage = () => {
                                 <h2 className={contentHeaderClass}>{fourthNavText}</h2>
                                 <div className="ml-4">
                                     <div className="mt-2 text-lg text-gray-400">
-                                        <p></p>
+                                        <p>Speech Recognition is a React Hook that works with the Web Speech API to "translate" speech from your device’s microphone into text.</p>
+                                        <p>The Web Speech API was introduced in 2012 by the W3C community. The text-to-speech and speech-to-text functionalities are handled by two interfaces: speech synthesis and speech recognition.</p>
+                                        <p>To add Speech Recognition to your React project, simply open your terminal and install it with: <strong>npm i --save react-speech-recognition</strong></p>
+                                        <p>To use React Speech Recognition, we must first import it into the component. We will use the useSpeechRecognition hook and the SpeechRecognition object.</p>
+                                        <br/>
+                                        <p>First we import React Speech Recognition. Then we can use:</p>
+                                        <ul className="ml-4">
+                                            <br/>
+                                            <li>To start listening to the user’s voice, we need to call the startListening function: <strong>SpeechRecognition.startListening()</strong></li>
+                                            <li>To stop listening, we can call stopListening: <strong>SpeechRecognition.stopListening()</strong></li>
+                                            <li>To get the transcript of the user’s speech, we will use <strong>transcript</strong> from <strong>useSpeechRecognition()</strong>, This will record the value whenever a user says something.</li>
+                                            <li>We can also use <strong>resetTranscript.</strong></li>
+                                            <li>More about this hook: <a className="font-semibold hover:text-indigo-900" href="https://www.npmjs.com/package/react-speech-recognition">https://www.npmjs.com/package/react-speech-recognition</a> </li>
+                                        </ul>
+                                        <br/>
+                                        <p>In order to use this demo, click on START button and enable using microphone in your browser. The transcript of the text will appear below. </p>
                                         <br/>
                                     <Dictaphone/>
                                 </div>
@@ -208,7 +227,7 @@ const MainPage = () => {
                                 </div>
                             </div>
                             <hr className="my-12 h-0.5 border-t-0 bg-neutral-100"/>
-                            
+
                         </div>
                     </div>
                 </div>

@@ -15,7 +15,7 @@ const Dictaphone = () => {
     }
 
     return (
-        <div className="p-4 rounded-md text-gray-800 dark:text-gray-400">
+        <div className="rounded-md text-gray-800 dark:text-gray-400">
             <p className="pt-4 pb-4">Microphone: {listening ? 'on' : 'off'}</p>
             <button
                 className={requestButtonClass}
