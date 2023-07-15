@@ -26,7 +26,7 @@ const DallE = () => {
         <div className="">
             <input onChange={(e) => setPrompt(e.target.value)}
                    placeholder="Enter description of an image"
-                   className="w-80 p-2 border-2"
+                   className="w-80 p-2 mb-4 border-2 rounded-md"
             />
             <div className="flex">
                 <button type="button"

@@ -1,25 +1,25 @@
-export const headerExampleText = 'The OpenAI website provides a variety of examples that showcase the capabilities of their language models. These examples include:'
-export const generationText ='Text generation: The text generation models, such as GPT-3, are trained on a massive dataset of text and can generate high-quality, human-like text. ' +
-    'The user can provide a prompt or a seed text, and the model will generate new text based on that input. ' +
-    'The generated text can be used for various applications such as writing articles, composing poetry, and creating chatbot responses.'
-export const completionText = 'Text completion: The text completion models, such as GPT-3, are trained to complete a given sentence or paragraph. Users can enter a partial sentence, ' +
-    'and the model will generate the next most likely continuation. This can be useful for writing, coding, or even in conversational AI systems.'
-export const translationText = 'Language Translation: The language translation models are trained to translate text from one language to another. The user can input text in one language and ' +
-    'the model will translate it to another language. The model can be fine-tuned to work with specific languages or language pairs.'
-export const summarizationText = 'Text summarization: The text summarization models are trained to condense a large amount of text into a shorter, more concise summary. ' +
-    'This can be useful for quickly getting the main points from a long article or document.'
-export const answeringText = 'Question answering: The question answering models are trained to answer a wide range of questions based on a given context. ' +
-    'These models can understand natural language questions and provide accurate and relevant answers.'
-export const analysisText = 'Sentiment Analysis: The Sentiment Analysis models are trained to determine the sentiment (positive, negative, neutral) of a given text. ' +
-    'These models can be used for various applications such as analyzing customer feedback, social media comments, and reviews.'
-export const conclusionText = 'All these examples on the OpenAI website are interactive, and user can try and experiment with the different models available. ' +
-    'The website also provides API access and code samples that developers can use to integrate the models into their own applications.'
-export const firstNavText = 'Dall-E'
+//Introduction text
+export const headerExampleText = 'The advent of generative AI services has ushered in a new era of programmatic creation of multimedia content, revolutionizing the way we produce and consume visual and audiovisual materials. By leveraging the power of deep learning algorithms and neural networks, generative AI enables the automated generation of high-quality and personalized multimedia content across various domains.\n' +
+    '\n' +
+    'In the realm of visual content, generative AI services have proven to be invaluable tools for artists, designers, and marketers. With access to vast datasets and training models, these services can generate images, illustrations, and graphics that adhere to specific styles, themes, or brand guidelines. This streamlines the content creation process, allowing professionals to quickly generate visuals that resonate with their target audience. From generating custom designs for branding purposes to creating visual assets for marketing campaigns, generative AI services offer a time-efficient and cost-effective solution.\n' +
+    '\n' +
+    'Furthermore, generative AI services have the ability to synthesize realistic and immersive audiovisual content. By training on extensive libraries of audio and video data, AI algorithms can generate lifelike sounds, music, and even videos that mimic real-world scenarios. This has applications in various industries, such as film production, video game development, and virtual reality experiences. For instance, AI-powered algorithms can automatically generate background music that matches the mood and pace of a video, or create realistic sound effects for virtual environments, enhancing the overall user experience.\n' +
+    '\n' +
+    'Generative AI services also play a vital role in automating the process of content adaptation and localization. With global markets becoming increasingly diverse, it is crucial for businesses to create multimedia content that resonates with different cultures and languages. Generative AI algorithms can analyze and understand the nuances of different cultural contexts, enabling the automatic generation of localized versions of multimedia content. This significantly reduces the time and effort required for manual adaptation, allowing businesses to reach broader audiences with culturally relevant content.\n' +
+    '\n' +
+    'However, as with any AI technology, there are ethical considerations to keep in mind. Generative AI services must be used responsibly and with an awareness of potential biases that may be present in the training data. Careful attention should be given to the generated content to ensure it aligns with ethical guidelines, avoids offensive or harmful material, and respects copyright and intellectual property rights.\n' +
+    '\n' +
+    'In conclusion, the programmatic creation of multimedia content using generative AI services represents a significant advancement in content production and automation. From visual graphics and illustrations to realistic audio and video synthesis, these services offer professionals across industries a powerful tool to streamline their creative workflows, enhance audience engagement, and reach global markets effectively. By embracing generative AI responsibly, we can unlock the full potential of this technology and reshape the future of multimedia content creation.'
+
+export const conclusionText = 'This application is demonstration of services that are using generative AI to create multimedia content including:' +
+    ' text to image, speech to text, image to text, object recognition, text to speech and text to video'
+
+//Headers navigation menu
+export const firstNavText = 'Text To Image'
 export const secondNavText = 'Image To Text'
 export const thirdNavText = 'Object Recognition'
 export const fourthNavText = 'Speech Recognition'
 export const fifthNavText = 'Text to Speech'
 export const sixthNavText = 'Text to Video'
-export const seventhNavText = 'Questions and Answers'
-export const eighthNavText = 'Summarize for 2nd grader'
-export const imageToTextText = 'Generisanje slike na osnovu unetog teksta. Dalle mozemo isprobati na dva nacina: https://labs.openai.com/. U browseru Edge imamo ugradjen DALL-E AI kao opciju Image Generator sa strane (nije dostupno kod nas, ima u dev verziji). Image Creator from Microsoft Bing u Canary. U Bing chat-u postoji upload slika ali ne radi dobro, ne prepoznaje dobro sta je na slici I prilikom uploada se cesto desava greska. API reference: https://platform.openai.com/docs/api-reference/authentication Link za preuzimanje razlicitih verzija Edge-a: https://www.microsoft.com/en-us/edge/download/insider?form=MA13FJ  '
+
+

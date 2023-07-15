@@ -1,11 +1,20 @@
 import React, {useState} from 'react';
 import {Link, useNavigate} from "react-router-dom";
 import {
-    analysisText, answeringText, completionText, conclusionText, eighthNavText,
-    fifthNavText, firstNavText, fourthNavText, generationText, headerExampleText, imageToTextText, secondNavText,
-    seventhNavText, sixthNavText, summarizationText, thirdNavText, translationText
+    conclusionText,
+    fifthNavText,
+    firstNavText,
+    fourthNavText,
+    headerExampleText,
+    secondNavText,
+    sixthNavText,
+    thirdNavText
 } from "../constants/texts";
-import {contentHeaderClass, navBarClass, navigationItemClass, navigationItemFirstClass
+import {
+    contentHeaderClass,
+    navBarClass,
+    navigationItemClass,
+    navigationItemFirstClass
 } from "../constants/cssClasses";
 
 import HamburgerIcon from "../components/HamburgerIcon";
@@ -21,22 +30,12 @@ const MainPage = () => {
     const [mobileNavbar, setMobileNavbar] = useState(false);
     let navigate = useNavigate();
 
-    const headerText = [
-        {description: `${generationText}`, key: 0},
-        {description: `${completionText}`, key: 1},
-        {description: `${translationText}`, key: 2},
-        {description: `${summarizationText}`, key: 3},
-        {description: `${answeringText}`, key: 4},
-        {description: `${analysisText}`, key: 5}
-    ];
     const navigationText = [
         {text: `${secondNavText}`, key: 0, href: "#i2t"},
         {text: `${thirdNavText}`, key: 1, href: "#object-rec"},
         {text: `${fourthNavText}`, key: 2, href: "#dictaphone"},
         {text: `${fifthNavText}`, key: 3, href: "#text2speech"},
         {text: `${sixthNavText}`, key: 4, href: "#text2video"},
-        {text: `${seventhNavText}`, key: 5, href: "#js2py"},
-        {text: `${eighthNavText}`, key: 6, href: "#summarize"}
     ];
 //TODO: make a new class from navBarClass to set navbar on mobile not to overlap when clicked on link
     return (
@@ -67,7 +66,7 @@ const MainPage = () => {
             <div className={navBarClass}>
                 <nav className="relative space-y-8 mt-10">
                     <button onClick={() => {navigate('../')}}>
-                        <h5 className="mb-3 text-sm font-semibold text-slate-900 dark:text-slate-200">
+                        <h5 className="mb-3 text-sm font-semibold text-slate-200">
                             <Link reloadDocument to="#header">AI Services Demo React App</Link>
                             </h5>
                     </button>
@@ -85,21 +84,10 @@ const MainPage = () => {
             <div className="w-full px-4 sm:px-6 md:px-8 lg:pl-[26rem]">
                 <div className="max-w-3xl mx-auto xl:max-w-none py-10 xl:ml-0 xl:pr-16 ">
                     <header id="header" className="max-w-6xl pt-8">
-                        <h1 className="block text-xl font-bold text-gray-800 sm:text-3xl dark:text-indigo-900 mb-6">
-                            Examples</h1>
-                        <div className="mt-2 text-lg text-gray-800 dark:text-gray-400">
+                        <h1 className="block text-xl font-bold sm:text-3xl text-indigo-900 mb-6">
+                            Programmatic Creation of Multimedia Content Using Generative AI Services</h1>
+                        <div className="mt-2 ml-4 text-lg text-gray-400">
                             <p>{headerExampleText}</p>
-                            <br/>
-                            <ul className="ml-4">
-                                {headerText.map(item => {
-                                    return (
-                                        <>
-                                            <li key={item.key}>{item.description}</li>
-                                            <br/>
-                                        </>
-                                    );
-                                })}
-                            </ul>
                             <br/>
                             <p>{conclusionText}</p>
                         </div>
@@ -109,8 +97,24 @@ const MainPage = () => {
                             <div id="dalle" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{firstNavText}</h2>
                                 <div className="ml-4">
-                                    <div className="mt-2 text-lg text-gray-800 dark:text-gray-400">
-                                        <p>{imageToTextText}</p>
+                                    <div className="mt-2 text-lg text-gray-400">
+                                        <p>For the purpose of generating an image with text, we will use the openai service, which is already known to everyone, and is called Dalle. </p>
+                                        <br/>
+                                        <p>Dalle is just one of the set of services offered by the OpenAI platform. Apart from it, the most famous and also the one that is the most used is ChatGPT. </p>
+                                        <br/>
+                                        <p>In order to use any of OpenAI services in our applications, we need to install openAI library with npm and connect to their API. </p>
+                                        <br/>
+                                        <p>How to access the API and authenticate can be found at the following link: <a className="font-semibold hover:text-indigo-900" href="https://platform.openai.com/docs/api-reference/authentication">https://platform.openai.com/docs/api-reference/authentication</a> </p>
+                                        <br/>
+                                        <p>After logging in to the openai platform, it is necessary to generate an API key and an organization. After that, we can choose what service we want to call, and how we want to configure parameters on model that we need.</p>
+                                        <br/>
+                                        <p>We can try Dalle in several ways:</p>
+                                        <ul className="ml-2">
+                                            <br/>
+                                            <li>Through OpenAI at <a className="font-semibold hover:text-indigo-900" href="https://labs.openai.com/">https://labs.openai.com/</a> </li>
+                                            <li>Edge(Canary version) has a built-in option called Image generator, which is based on Dalle.</li>
+                                            <li>On Microsoft Bing you can access it on <a className="font-semibold hover:text-indigo-900" href="https://www.bing.com/images/create/">https://www.bing.com/images/create/</a></li>
+                                        </ul>
                                         <br/>
                                         <DallE/>
                                     </div>
@@ -120,58 +124,60 @@ const MainPage = () => {
 
                             <div id="i2t" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{secondNavText}</h2>
-                                <div>
-                                    <ImageToText/>
+                                <div className="ml-4">
+                                    <div className="mt-2 text-lg text-gray-400">
+                                        <p></p>
+                                        <br/>
+                                        <ImageToText/>
+                                    </div>
                                 </div>
 
                             </div>
 
                             <div id="object-rec" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{thirdNavText}</h2>
-                                <div>
+                                <div className="ml-4">
+                                    <div className="mt-2 text-lg text-gray-400">
+                                        <p></p>
+                                        <br/>
                                     <ObjectRecognition/>
                                 </div>
+                            </div>
 
                             </div>
 
                             <div id="dictaphone" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{fourthNavText}</h2>
-                                <div>
+                                <div className="ml-4">
+                                    <div className="mt-2 text-lg text-gray-400">
+                                        <p></p>
+                                        <br/>
                                     <Dictaphone/>
                                 </div>
-
+                            </div>
                             </div>
 
                             <div id="text2speech" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{fifthNavText}</h2>
-                                <div>
+                                <div className="ml-4">
+                                    <div className="mt-2 text-lg text-gray-400">
+                                        <p></p>
+                                        <br/>
                                     <TextToSpeech/>
+                                    </div>
                                 </div>
                             </div>
 
                             <div id="text2speech" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{sixthNavText}</h2>
-                                <div>
+                                <div className="ml-4">
+                                    <div className="mt-2 text-lg text-gray-400">
+                                        <p></p>
+                                        <br/>
                                     <TextToVideo/>
+                                    </div>
                                 </div>
-
                             </div>
-
-                            {/*<div id="qa" className="scroll-mt-24 min-h-[25rem]">*/}
-                            {/*    <h2 className={contentHeaderClass}>{seventhNavText}</h2>*/}
-                            {/*    <div>*/}
-                            {/*        <QA/>*/}
-                            {/*    </div>*/}
-
-                            {/*</div>*/}
-
-                            {/*<div id="summarize" className="scroll-mt-24 min-h-[25rem]">*/}
-                            {/*    <h2 className={contentHeaderClass}>{eighthNavText}</h2>*/}
-                            {/*    <div>*/}
-                            {/*        <SecondGraderSummary/>*/}
-                            {/*    </div>*/}
-
-                            {/*</div>*/}
                         </div>
                     </div>
                 </div>
