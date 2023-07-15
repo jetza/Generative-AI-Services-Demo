@@ -98,6 +98,8 @@ const MainPage = () => {
                             <p>{conclusionText}</p>
                         </div>
                     </header>
+                    <hr className="my-12 h-0.5 border-t-0 bg-neutral-100"/>
+
                     <div className="mt-16">
                         <div id="scrollspy" className="space-y-10 md:space-y-16">
                             <div id="dalle" className="scroll-mt-24 min-h-[25rem]">
@@ -125,8 +127,8 @@ const MainPage = () => {
                                         <DallE/>
                                     </div>
                                 </div>
-
                             </div>
+                            <hr className="my-12 h-0.5 border-t-0 bg-neutral-100"/>
 
                             <div id="i2t" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{secondNavText}</h2>
@@ -157,6 +159,7 @@ const MainPage = () => {
                                 </div>
 
                             </div>
+                            <hr className="my-12 h-0.5 border-t-0 bg-neutral-100"/>
 
                             <div id="object-rec" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{thirdNavText}</h2>
@@ -167,8 +170,8 @@ const MainPage = () => {
                                     <ObjectDetection/>
                                 </div>
                             </div>
-
                             </div>
+                            <hr className="my-12 h-0.5 border-t-0 bg-neutral-100"/>
 
                             <div id="dictaphone" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{fourthNavText}</h2>
@@ -180,6 +183,7 @@ const MainPage = () => {
                                 </div>
                             </div>
                             </div>
+                            <hr className="my-12 h-0.5 border-t-0 bg-neutral-100"/>
 
                             <div id="text2speech" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{fifthNavText}</h2>
@@ -191,8 +195,9 @@ const MainPage = () => {
                                     </div>
                                 </div>
                             </div>
+                            <hr className="my-12 h-0.5 border-t-0 bg-neutral-100"/>
 
-                            <div id="text2speech" className="scroll-mt-24 min-h-[25rem]">
+                            <div id="text2video" className="scroll-mt-24 min-h-[25rem]">
                                 <h2 className={contentHeaderClass}>{sixthNavText}</h2>
                                 <div className="ml-4">
                                     <div className="mt-2 text-lg text-gray-400">
@@ -202,6 +207,8 @@ const MainPage = () => {
                                     </div>
                                 </div>
                             </div>
+                            <hr className="my-12 h-0.5 border-t-0 bg-neutral-100"/>
+                            
                         </div>
                     </div>
                 </div>
