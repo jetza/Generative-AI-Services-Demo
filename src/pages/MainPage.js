@@ -5,7 +5,9 @@ import {
     fifthNavText,
     firstNavText,
     fourthNavText,
-    headerExampleText,
+    headerExample1Text,
+    headerExample2Text,
+    headerExample3Text,
     secondNavText,
     sixthNavText,
     thirdNavText
@@ -20,7 +22,7 @@ import {
 import HamburgerIcon from "../components/HamburgerIcon";
 import DallE from "../components/DallE";
 import ImageToText from "../components/ImageToText";
-import ObjectRecognition from "../components/ObjectRecognition";
+import ObjectDetection from "../components/ObjectDetection";
 import Dictaphone from "../components/Dictaphone";
 import TextToSpeech from "../components/TextToSpeech";
 import TextToVideo from "../components/TextToVideo";
@@ -87,7 +89,11 @@ const MainPage = () => {
                         <h1 className="block text-xl font-bold sm:text-3xl text-indigo-900 mb-6">
                             Programmatic Creation of Multimedia Content Using Generative AI Services</h1>
                         <div className="mt-2 ml-4 text-lg text-gray-400">
-                            <p>{headerExampleText}</p>
+                            <p>{headerExample1Text}</p>
+                            <br/>
+                            <p>{headerExample2Text}</p>
+                            <br/>
+                            <p>{headerExample3Text}</p>
                             <br/>
                             <p>{conclusionText}</p>
                         </div>
@@ -102,7 +108,7 @@ const MainPage = () => {
                                         <br/>
                                         <p>Dalle is just one of the set of services offered by the OpenAI platform. Apart from it, the most famous and also the one that is the most used is ChatGPT. </p>
                                         <br/>
-                                        <p>In order to use any of OpenAI services in our applications, we need to install openAI library with npm and connect to their API. </p>
+                                        <p>In order to use any of OpenAI services in our applications, we need to install OpenAI library with npm and connect to their API. </p>
                                         <br/>
                                         <p>How to access the API and authenticate can be found at the following link: <a className="font-semibold hover:text-indigo-900" href="https://platform.openai.com/docs/api-reference/authentication">https://platform.openai.com/docs/api-reference/authentication</a> </p>
                                         <br/>
@@ -126,7 +132,25 @@ const MainPage = () => {
                                 <h2 className={contentHeaderClass}>{secondNavText}</h2>
                                 <div className="ml-4">
                                     <div className="mt-2 text-lg text-gray-400">
-                                        <p></p>
+                                        <p>API Ninjas is a set of 78 API's that developers can use to build their own projects.</p>
+                                        <br/>
+                                        <p>There is a section AI/Computer Vision which you can find under the list of all API's on <a className="font-semibold hover:text-indigo-900" href="https://api-ninjas.com/api">https://api-ninjas.com/api</a></p>
+                                        <br/>
+                                        <p>In order to use their services, developer needs to register and generate API key. There are examples of usage and it is very easy to implement in code.</p>
+                                        <br/>
+                                        <p>There is a free and paid plan. Under 50 000 API calls are free per month. You can track your API calls through their dashboard.</p>
+                                        <br/>
+                                        <br/>
+                                        <p>Here is a list of all AI services:</p>
+                                        <br/>
+                                        <ul className="ml-2">
+                                            <li><strong>Embeddings</strong>  - Encode any text to vectors using state-of-the-art machine learning models.</li>
+                                            <li><strong>Face Detect</strong> - Detect faces from any given image.</li>
+                                            <li><strong>Image to Text</strong> - State-of-the-art text detection and extraction from images.</li>
+                                            <li><strong>Object Detection</strong> - Fast and accurate image object recognition using the latest machine learning algorithms.</li>
+                                            <li><strong>Sentiment</strong> - Text sentiment analysis using state-of-the-art algorithms.</li>
+                                            <li><strong>Text Similarity</strong> - Compute text similarity score using the latest NLP machine learning models.</li>
+                                        </ul>
                                         <br/>
                                         <ImageToText/>
                                     </div>
@@ -140,7 +164,7 @@ const MainPage = () => {
                                     <div className="mt-2 text-lg text-gray-400">
                                         <p></p>
                                         <br/>
-                                    <ObjectRecognition/>
+                                    <ObjectDetection/>
                                 </div>
                             </div>
 

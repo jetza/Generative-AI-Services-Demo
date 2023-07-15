@@ -1,12 +1,12 @@
 import React from 'react';
-import ObjectRecognition from "../components/ObjectRecognition";
+import ObjectDetection from "../components/ObjectDetection";
 
-const ObjectRecognitionPage = () => {
+const ObjectDetectionPage = () => {
     return (
         <div>
-            <ObjectRecognition/>
+            <ObjectDetection/>
         </div>
     );
 };
 
-export default ObjectRecognitionPage;
+export default ObjectDetectionPage;

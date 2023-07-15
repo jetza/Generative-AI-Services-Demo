@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import {OBJECT_RECOGNITION_URL} from "../Config/apiNinjasConfiguration";
+import {OBJECT_DETECTION_URL} from "../Config/apiNinjasConfiguration";
 import {requestButtonClass} from "../constants/cssClasses";
 
-const ObjectRecognition = () => {
+const ObjectDetection = () => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [imageSource, setImageSource] = useState('');
     const [object, setObject] = useState({})
@@ -21,7 +21,7 @@ const ObjectRecognition = () => {
         formData.append('image', selectedFile);
 
         try {
-            const response = await fetch(`${OBJECT_RECOGNITION_URL}`, {
+            const response = await fetch(`${OBJECT_DETECTION_URL}`, {
                 method: 'POST',
                 headers: { 'X-Api-Key': `${process.env.REACT_APP_API_NINJAS_KEY}` },
                 body: formData,
@@ -79,4 +79,4 @@ const ObjectRecognition = () => {
     );
 };
 
-export default ObjectRecognition;
+export default ObjectDetection;
