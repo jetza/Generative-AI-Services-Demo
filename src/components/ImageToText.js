@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { IMAGE_TO_TEXT_URL } from "../Config/apiNinjasConfiguration";
 import {requestButtonClass} from "../constants/cssClasses";
+import {uiActions} from "../store/ui";
+import {useDispatch} from "react-redux";
 
 const ImageToText = () => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [imageSource, setImageSource] = useState('');
-    const [text, setText] = useState({})
+    const [text, setText] = useState({});
+    const dispatch = useDispatch();
 
     const handleFileChange = (event) => {
         setSelectedFile(event.target.files[0]);
@@ -13,6 +16,8 @@ const ImageToText = () => {
     };
 
     const handleRequest = async () => {
+        dispatch(uiActions.setIsLoading(true));
+
         if (!selectedFile) {
             return;
         }
@@ -31,12 +36,14 @@ const ImageToText = () => {
                 const result = await response.json();
                 const values = result.map((item) => item.text);
                 setText(values);
+                dispatch(uiActions.setIsLoading(false));
             } else {
                 const errorText = await response.text();
                 console.log(errorText);
             }
         } catch (error) {
             console.log('Error making the request');
+
         }
     };
 

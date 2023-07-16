@@ -146,7 +146,7 @@ const MainPage = () => {
                                         <p>Here is a list of all AI services:</p>
                                         <br/>
                                         <ul className="ml-2">
-                                            <li><strong>Embeddings</strong>  - Encode any text to vectors using state-of-the-art machine learning models.</li>
+                                            <li><strong>Embeddings</strong> - Encode any text to vectors using state-of-the-art machine learning models.</li>
                                             <li><strong>Face Detect</strong> - Detect faces from any given image.</li>
                                             <li><strong>Image to Text</strong> - State-of-the-art text detection and extraction from images.</li>
                                             <li><strong>Object Detection</strong> - Fast and accurate image object recognition using the latest machine learning algorithms.</li>
@@ -155,7 +155,7 @@ const MainPage = () => {
                                         </ul>
                                         <br/>
                                         <p>This is a demonstration of text detection in image uploaded from local machine.</p>
-                                        <p>After uploading an image and click on MAKE REQUEST button, all detected words from an image should appear at the bottom. </p>
+                                        <p>After uploading an image and click on <strong>MAKE REQUEST</strong> button, all detected words from an image should appear at the bottom.</p>
                                         <br/>
                                         <ImageToText/>
                                     </div>
@@ -169,7 +169,7 @@ const MainPage = () => {
                                 <div className="ml-4">
                                     <div className="mt-2 text-lg text-gray-400">
                                         <p>This is a demonstration of object detection in image uploaded from local machine, using API Ninjas service.</p>
-                                        <p>After uploading an image and click on MAKE REQUEST button, all assumptions for detected objects from an image should appear at the bottom. </p>
+                                        <p>After uploading an image and click on MAKE REQUEST button, all assumptions for detected objects from an image should appear at the bottom.</p>
                                         <br/>
                                     <ObjectDetection/>
                                 </div>

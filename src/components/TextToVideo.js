@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import {requestButtonClass} from "../constants/cssClasses";
 import VideoPlayer from "./VideoPlayer";
+import {useDispatch} from "react-redux";
+import {uiActions} from "../store/ui";
 
 const TextToVideo = () => {
     const [type] = useState('text');
@@ -14,13 +16,12 @@ const TextToVideo = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [talkId, setTalkId] = useState('');
     const [resultUrl, setResultUrl] = useState('');
-    const [voices, setVoices] = useState("Microsoft");
+    const [voices, setVoices] = useState("microsoft");
 
-
-    //TODO: install react video to make it embedded in app, use spinner while make api call
-
+    const dispatch = useDispatch();
 
     const createVideoHandler = async () => {
+        dispatch(uiActions.setIsLoading(true));
         setIsLoading(true);
 
         const options = {
@@ -36,11 +37,12 @@ const TextToVideo = () => {
                 source_url: sourceUrl,
             })
         };
-console.log(selectedVoice)
+
         try {
             const response = await fetch('https://api.d-id.com/talks', options);
             const data = await response.json();
             setTalkId(data.id);
+            dispatch(uiActions.setIsLoading(false));
         } catch (err) {
             console.log(err);
         } finally {
@@ -49,6 +51,8 @@ console.log(selectedVoice)
     };
 
     const getVideoHandler = async () => {
+        dispatch(uiActions.setIsLoading(true));
+
         const options = {
             method: 'GET',
             headers: {
@@ -60,6 +64,7 @@ console.log(selectedVoice)
             const response = await fetch(`https://api.d-id.com/talks/${talkId}`, options);
             const data = await response.json();
             setResultUrl(data?.result_url);
+            dispatch(uiActions.setIsLoading(false));
         } catch (err) {
             console.log(err);
         } finally {
@@ -68,6 +73,8 @@ console.log(selectedVoice)
     };
 
     const getVoicesHandler = async () => {
+        dispatch(uiActions.setIsLoading(true));
+
         const options = {
             method: 'GET',
             headers: {
@@ -79,6 +86,7 @@ console.log(selectedVoice)
             const response = await fetch(`https://api.d-id.com/tts/voices?provider=${provider}`, options);
             const data = await response.json();
             setVoices(data);
+            dispatch(uiActions.setIsLoading(false));
         } catch (err) {
             console.log(err);
         } finally {
@@ -223,7 +231,7 @@ console.log(selectedVoice)
                     <div className="w-2/3 p-4 m-2 border-4 rounded">
                         <VideoPlayer video={resultUrl?.result_url}/>
                     </div>
-        </div>
+            </div>
         </div>
     );
 };

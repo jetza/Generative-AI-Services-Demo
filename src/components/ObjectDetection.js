@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
 import {OBJECT_DETECTION_URL} from "../Config/apiNinjasConfiguration";
 import {requestButtonClass} from "../constants/cssClasses";
+import {uiActions} from "../store/ui";
+import {useDispatch} from "react-redux";
 
 const ObjectDetection = () => {
     const [selectedFile, setSelectedFile] = useState(null);
     const [imageSource, setImageSource] = useState('');
-    const [object, setObject] = useState({})
+    const [object, setObject] = useState({});
+    const dispatch = useDispatch();
 
     const handleFileChange = (event) => {
         setSelectedFile(event.target.files[0]);
@@ -13,6 +16,8 @@ const ObjectDetection = () => {
     };
 
     const handleRequest = async () => {
+        dispatch(uiActions.setIsLoading(true));
+
         if (!selectedFile) {
             return;
         }
@@ -29,11 +34,10 @@ const ObjectDetection = () => {
 
             if (response.ok) {
                 const result = await response.json();
-                console.log(result)
                 const values = result.map((item) => item.label);
                 let uniqueValues = [...new Set(values)];
-                console.log(uniqueValues);
                 setObject(uniqueValues);
+                dispatch(uiActions.setIsLoading(false));
 
             } else {
                 const errorText = await response.text();
