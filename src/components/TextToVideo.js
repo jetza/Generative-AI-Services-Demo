@@ -15,6 +15,10 @@ const TextToVideo = () => {
     const [resultUrl, setResultUrl] = useState('');
     const [voices, setVoices] = useState("Microsoft");
 
+
+    //TODO: install react video to make it embedded in app, use spinner while make api call
+
+
     const createVideoHandler = async () => {
         setIsLoading(true);
 
@@ -86,7 +90,8 @@ console.log(selectedVoice)
 
     return (
         <div className="flex flex-col mt-8 border-2 rounded p-5">
-            <div className="w-64">
+                <div className="flex">
+                    <div className="w-1/3">
                 <label className="text-gray-700 mb-1" htmlFor="subtitles">Subtitles</label>
                 <>
                     <div className="flex items-center mb-4">
@@ -186,35 +191,41 @@ console.log(selectedVoice)
                     value={sourceUrl}
                     onChange={(e) => setSourceUrl(e.target.value)}
                 />
-
-            </div>
-            <br/>
-            <div>
-                <button
-                    className={requestButtonClass}
-                    onClick={createVideoHandler}
-                    disabled={isLoading}
-                >
-                    {isLoading ? 'Loading...' : 'Create Video'}
-                </button>
-            </div>
-            <br/>
-            <div>
-                <a
-                    href={resultUrl?.result_url}
-                    download={resultUrl?.result_url}
-                    target="_blank"
-                    rel="noreferrer"
-                >
+                <br/>
+                <div>
                     <button
                         className={requestButtonClass}
-                        onClick={getVideoHandler}
+                        onClick={createVideoHandler}
                         disabled={isLoading}
                     >
-                        {isLoading ? 'Downloading...' : 'Get Video'}
+                        {isLoading ? 'Loading...' : 'Create Video'}
                     </button>
-                </a>
+                </div>
+                <br/>
+                <div>
+                    <a
+                        href={resultUrl?.result_url}
+                        download={resultUrl?.result_url}
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        <button
+                            className={requestButtonClass}
+                            onClick={getVideoHandler}
+                            disabled={isLoading}
+                        >
+                            {isLoading ? 'Downloading...' : 'Get Video'}
+                        </button>
+                    </a>
+                </div>
             </div>
+                    <div className="w-2/3">
+                        Content for the video
+                    </div>
+
+
+
+        </div>
         </div>
     );
 };
