@@ -15,10 +15,6 @@ const TextToVideo = () => {
     const [resultUrl, setResultUrl] = useState('');
     const [voices, setVoices] = useState("Microsoft");
 
-    const onOptionChange = e => {
-        setProvider(e.target.value)
-
-    }
     const createVideoHandler = async () => {
         setIsLoading(true);
 
@@ -89,18 +85,86 @@ console.log(selectedVoice)
     };
 
     return (
-        <div className="flex flex-col mt-8">
+        <div className="flex flex-col mt-8 border-2 rounded p-5">
             <div className="w-64">
-                <label className="text-gray-700 mb-1" htmlFor="subtitles">
-                    Subtitles (type true/false):
+                <label className="text-gray-700 mb-1" htmlFor="subtitles">Subtitles</label>
+                <>
+                    <div className="flex items-center mb-4">
+                        <input type="radio"
+                               value="true"
+                               checked={subtitles === "true"}
+                               id="subtitlesTrue"
+                               onChange={() => setSubtitles("true")}
+                               className="w-4 h-4 focus:ring-indigo-900 focus:ring-1 focus:ring-offset-2"/>
+                        <label htmlFor="subtitlesTrue"
+                               className="ml-2 text-lg font-medium text-gray-400">Subtitles ON</label>
+                    </div>
+                    <div className="flex items-center">
+                        <input type="radio"
+                               value="false"
+                               checked={subtitles === "false"}
+                               id="subtitlesFalse"
+                               onChange={() => setSubtitles("false")}
+                               className="w-4 h-4 focus:ring-indigo-900 focus:ring-1 focus:ring-offset-2"/>
+                        <label htmlFor="subtitlesFalse"
+                               className="ml-2 text-lgs font-medium text-gray-400">Subtitles OFF</label>
+                    </div>
+                </>
+                <br/>
+                <label className="text-gray-700 mb-1 " htmlFor="provider">Select Provider</label>
+                <>
+                    <div className="flex items-center mb-4">
+                        <input type="radio"
+                               value="microsoft"
+                               id="microsoft"
+                               checked={provider === 'microsoft'}
+                               onChange={() => setProvider("microsoft")}
+                               className="w-4 h-4 focus:ring-indigo-900 focus:ring-1 focus:ring-offset-2"/>
+                        <label htmlFor="microsoft"
+                               className="ml-2 text-lg font-medium text-gray-400">Microsoft</label>
+                    </div>
+                    <div className="flex items-center">
+                        <input type="radio"
+                               value="amazon"
+                               id="amazon"
+                               checked={provider === 'amazon'}
+                               onChange={() => setProvider("amazon")}
+                               className="w-4 h-4 focus:ring-indigo-900 focus:ring-1 focus:ring-offset-2"/>
+                        <label htmlFor="amazon"
+                               className="ml-2 text-lgs font-medium text-gray-400">Amazon</label>
+                    </div>
+                </>
+                <div className="mt-4">
+                    <button
+                        className={requestButtonClass}
+                        onClick={getVoicesHandler}
+                        disabled={isLoading}
+                    >
+                        {isLoading ? 'Loading...' : 'Get voices'}
+                    </button>
+                </div>
+                <br/>
+                <label className="text-gray-700">
+                    Select Voice
                 </label>
-                <input
-                    className="w-full bg-gray-200 border border-gray-300 py-2 px-3 mb-2"
-                    type="text"
-                    id="subtitles"
-                    value={subtitles}
-                    onChange={(e) => setSubtitles(e.target.value)}
-                />
+                <br/>
+                <div>
+                    <select
+                        value={selectedVoice}
+                        onChange={handleVoiceChange}
+                        className="block appearance-none w-full bg-white border border-gray-300 text-gray-400 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-300"
+                    >
+                        <option value="" >Select a voice</option>
+                        {Array.isArray(voices) &&
+                            voices.map((voice) => (
+                                <option key={voice.id} value={voice.id}>
+                                    {`${voice.id} - ${voice.name} (${voice.gender})`}
+                                </option>
+                            ))}
+                    </select>
+                </div>
+                <br/>
+
                 <label className="text-gray-700 mb-1" htmlFor="input">
                     Input text
                 </label>
@@ -110,16 +174,6 @@ console.log(selectedVoice)
                     id="ssml"
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                />
-                <label className="text-gray-700 mb-1" htmlFor="config">
-                    Provider:
-                </label>
-                <input
-                    className="w-full bg-gray-200 border border-gray-300 py-2 px-3 mb-2"
-                    type="text"
-                    id="provider"
-                    value={provider}
-                    onChange={(e) => setProvider(e.target.value)}
                 />
 
                 <label className="text-gray-700 mb-1" htmlFor="sourceUrl">
@@ -132,70 +186,9 @@ console.log(selectedVoice)
                     value={sourceUrl}
                     onChange={(e) => setSourceUrl(e.target.value)}
                 />
-            </div>
-
-            <div className="my-4">
-                <h3 className="text-gray-700 mb-2">Select Provider</h3>
-                <div className="flex items-center">
-                    <input
-                        type="radio"
-                        name="provider"
-                        value="microsoft"
-                        id="microsoft"
-                        checked={provider === 'Microsoft'}
-                        onChange={onOptionChange}
-                        className="mr-2"
-                    />
-                    <label htmlFor="microsoft" className="label-checked:bg-red-600 text-gray-700 mr-4">
-                        Microsoft
-                    </label>
-
-                    <input
-                        type="radio"
-                        name="provider"
-                        value="amazon"
-                        id="amazon"
-                        checked={provider === 'Amazon'}
-                        onChange={onOptionChange}
-                        className="mr-2"
-                    />
-                    <label htmlFor="amazon" className="label-checked:bg-red-600 text-gray-700 mr-4">
-                        Amazon
-                    </label>
-                </div>
-
-                <div className="mt-4">
-                    <button
-                        className={requestButtonClass}
-                        onClick={getVoicesHandler}
-                        disabled={isLoading}
-                    >
-                        {isLoading ? 'Loading...' : 'Get voices'}
-                    </button>
-                </div>
-
-                <label className="text-gray-700">
-                    Select Voice
-                </label>
-
-                <div>
-                    <select
-                        value={selectedVoice}
-                        onChange={handleVoiceChange}
-                        className="block appearance-none w-full bg-white border border-gray-300 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                    >
-                        <option value="">Select a voice</option>
-                        {Array.isArray(voices) &&
-                            voices.map((voice) => (
-                                <option key={voice.id} value={voice.id}>
-                                    {`${voice.id} - ${voice.name} (${voice.gender})`}
-                                </option>
-                            ))}
-                    </select>
-                </div>
 
             </div>
-
+            <br/>
             <div>
                 <button
                     className={requestButtonClass}

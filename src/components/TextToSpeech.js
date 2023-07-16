@@ -43,7 +43,7 @@ const TextToSpeech = () => {
                             onChange={(event) => {
                                 setVoiceIndex(event.target.value);
                             }}
-                            className="w-full py-2 px-4 border border-gray-300 rounded-md mb-2 focus:outline-none focus:ring focus:border-blue-300"
+                            className="w-full py-2 px-4 border border-gray-300 rounded-md mb-2 focus:outline-none focus:ring focus:border-indigo-800"
                         >
                             <option value="">Default</option>
                             {voices.map((option, index) => (
@@ -67,7 +67,7 @@ const TextToSpeech = () => {
                                 onChange={(event) => {
                                     setRate(event.target.value);
                                 }}
-                                className="w-full mb-2"
+                                className="w-full mb-2 accent-indigo-800"
                             />
                         </div>
                         <div style={styleContainerRatePitch}>
@@ -85,7 +85,7 @@ const TextToSpeech = () => {
                                 onChange={(event) => {
                                     setPitch(event.target.value);
                                 }}
-                                className="w-full mb-2"
+                                className="w-full mb-2 accent-indigo-800"
                             />
                         </div>
                         <label htmlFor="message">Message</label>
@@ -97,7 +97,7 @@ const TextToSpeech = () => {
                             onChange={(event) => {
                                 setText(event.target.value);
                             }}
-                            className="w-full py-2 px-4 border border-gray-300 rounded-md mb-2 focus:outline-none focus:ring focus:border-blue-300"
+                            className="w-full py-2 px-4 border border-gray-300 rounded-md mb-2 focus:outline-none focus:ring focus:border-indigo-800"
                         />
                         {speaking ? (
                             <button

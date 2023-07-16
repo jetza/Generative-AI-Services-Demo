@@ -195,6 +195,9 @@ const MainPage = () => {
                                             <li>We can also use <strong>resetTranscript.</strong></li>
                                             <li>More about this hook: <a className="font-semibold hover:text-indigo-900" href="https://www.npmjs.com/package/react-speech-recognition">https://www.npmjs.com/package/react-speech-recognition</a> </li>
                                         </ul>
+                                        <p>Web Speech API documentation can be found here: <a className="font-semibold hover:text-indigo-900" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API">https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API</a></p>
+                                        <br/>
+                                        <p>Also, the same service can be found in OpenAI under the name <strong>Whisper</strong> and it can transcript/translate. More info: <a className="font-semibold hover:text-indigo-900" href="https://platform.openai.com/docs/guides/speech-to-text">https://platform.openai.com/docs/guides/speech-to-text</a></p>
                                         <br/>
                                         <p>In order to use this demo, click on START button and enable using microphone in your browser. The transcript of the text will appear below. </p>
                                         <br/>
@@ -224,7 +227,20 @@ const MainPage = () => {
                                 <h2 className={contentHeaderClass}>{sixthNavText}</h2>
                                 <div className="ml-4">
                                     <div className="mt-2 text-lg text-gray-400">
-                                        <p></p>
+                                        <p>D-ID, the most complex API in this demo, used to generate video based on provided data, can be found <a className="font-semibold hover:text-indigo-900" href="https://www.d-id.com/">HERE</a></p>
+                                        <p>In order to use it, you need to register and generate API key.</p>
+                                        <p>Documentation has great coverage and you can test API calls directly from their page.</p>
+                                        <p>Free plan has 5 minutes and 14 days trial, after that you will need to buy some of their package.</p>
+                                        <br/>
+                                        <p>In this demo, we are using three different API endpoints: </p>
+                                            <ul className="ml-4">
+                                                <li>First to get a list of voices based on chosen provider.</li>
+                                                <li>Second to generate video based on parameters input from application.</li>
+                                                <li>Third is API call to get that video based on generated id in previous call.</li>
+                                            </ul>
+                                        <br/>
+                                        <p>To test this demo, you need to find source image (face that you want to animate) from the Internet, enter if you need subtitles or not, choose type of voice (GET VOICES) and input text.</p>
+                                        <p>Click on CREATE VIDEO button, and then you click on GET VIDEO. Video should be downloaded to your local machine in MPG4 format.</p>
                                         <br/>
                                     <TextToVideo/>
                                     </div>
