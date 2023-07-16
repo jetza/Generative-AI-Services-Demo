@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {requestButtonClass} from "../constants/cssClasses";
+import VideoPlayer from "./VideoPlayer";
 
 const TextToVideo = () => {
     const [type] = useState('text');
@@ -219,12 +220,9 @@ console.log(selectedVoice)
                     </a>
                 </div>
             </div>
-                    <div className="w-2/3">
-                        Content for the video
+                    <div className="w-2/3 p-4 m-2 border-4 rounded">
+                        <VideoPlayer video={resultUrl?.result_url}/>
                     </div>
-
-
-
         </div>
         </div>
     );
