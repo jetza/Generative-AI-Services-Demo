@@ -53,7 +53,7 @@ const ImageToText = () => {
                 type="file"
                 onChange={handleFileChange}
                 accept="image/jpeg, image/png, image/jpg"
-                className="mb-4"
+                className="mb-4 block w-full h-7 text-sm text-gray-200 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 focus:outline-none dark:bg-gray-500 dark:border-gray-600 dark:placeholder-gray-400"
             />
             <button
                 onClick={handleRequest}

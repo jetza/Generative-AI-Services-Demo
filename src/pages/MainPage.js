@@ -7,7 +7,7 @@ import {
     fourthNavText,
     headerExample1Text,
     headerExample2Text,
-    headerExample3Text,
+    headerExample3Text, headerExample4Text,
     secondNavText,
     sixthNavText,
     thirdNavText
@@ -69,7 +69,7 @@ const MainPage = () => {
                 <nav className="relative space-y-8 mt-10">
                     <button onClick={() => {navigate('../')}}>
                         <h5 className="mb-3 text-sm font-semibold text-slate-200">
-                            <Link reloadDocument to="#header">AI Services Demo React App</Link>
+                            <Link reloadDocument to="#header">Generative AI Services Demo</Link>
                             </h5>
                     </button>
                     <ul className="ml-0.5 space-y-2 border-l-2 border-slate-100 dark:border-slate-800" data-hs-scrollspy="#scrollspy">
@@ -94,6 +94,8 @@ const MainPage = () => {
                             <p>{headerExample2Text}</p>
                             <br/>
                             <p>{headerExample3Text}</p>
+                            <br/>
+                            <p>{headerExample4Text}</p>
                             <br/>
                             <p>{conclusionText}</p>
                         </div>
@@ -143,7 +145,7 @@ const MainPage = () => {
                                         <p>There is a free and paid plan. Under 50 000 API calls are free per month. You can track your API calls through their dashboard.</p>
                                         <br/>
                                         <br/>
-                                        <p>Here is a list of all AI services:</p>
+                                        <p>List of all AI services:</p>
                                         <br/>
                                         <ul className="ml-2">
                                             <li><strong>Embeddings</strong> - Encode any text to vectors using state-of-the-art machine learning models.</li>
