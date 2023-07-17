@@ -1,4 +1,4 @@
-# Generative AI Multimedia App
+# Programmatic Creation of Multimedia Content Using Generative AI Services
 
 This is a React app that demonstrates how to use Generative AI services for creating multimedia content. You can use this app to generate images, text, speech, and videos from your input.
 
