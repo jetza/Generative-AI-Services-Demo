@@ -37,8 +37,10 @@ REACT_APP_DID_KEY=xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 REACT_APP_API_NINJAS=xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-4. Run `npm start` to start the development server.
+4. Run `npm run start` to start the development server.
 5. Open `http://localhost:3000` in your browser to see the app.
+
+NOTE: U must register to OpenAI, API Ninjas and D-ID to get your unique keys and then use them in this application.
 
 ## License
 
