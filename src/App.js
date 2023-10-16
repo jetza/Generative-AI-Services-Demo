@@ -1,4 +1,5 @@
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
+import React from 'react';
 import MainPage from "./pages/MainPage";
 import DallEPage from "./pages/DallEPage";
 import ImageToTextPage from "./pages/ImageToTextPage";

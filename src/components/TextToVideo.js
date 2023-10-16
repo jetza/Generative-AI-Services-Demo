@@ -19,8 +19,8 @@ const TextToVideo = () => {
     const [voices, setVoices] = useState("microsoft");
 
     const dispatch = useDispatch();
-
     const createVideoHandler = async () => {
+        console.log('hbhjbhj')
         dispatch(uiActions.setIsLoading(true));
         setIsLoading(true);
 
@@ -29,11 +29,17 @@ const TextToVideo = () => {
             headers: {
                 accept: 'application/json',
                 'content-type': 'application/json',
-                authorization: 'replace with api token'
+                authorization: 'token'
             },
             body: JSON.stringify({
-                script: { type, subtitles, type_: `${provider}`, voice_id: `${selectedVoice}`,  ssml, input },
-                config,
+                script: {
+                    type: type,
+                    subtitles: subtitles,
+                    provider: {type: `${provider}`, voice_id: `${selectedVoice}`},
+                    ssml: ssml,
+                    input: input,
+                },
+                config: config,
                 source_url: sourceUrl,
             })
         };
@@ -57,7 +63,7 @@ const TextToVideo = () => {
             method: 'GET',
             headers: {
                 accept: 'application/json',
-                authorization: 'replace with api token'
+                authorization: 'token'
             }
         };
         try {
@@ -79,7 +85,7 @@ const TextToVideo = () => {
             method: 'GET',
             headers: {
                 accept: 'application/json',
-                authorization: 'replace with api token'
+                authorization: 'token'
             }
         };
         try {
@@ -92,9 +98,6 @@ const TextToVideo = () => {
         } finally {
             setIsLoading(false);
         }
-    };
-    const handleVoiceChange = e => {
-        setSelectedVoice(e.target.value);
     };
 
     return (
@@ -165,7 +168,7 @@ const TextToVideo = () => {
                 <div>
                     <select
                         value={selectedVoice}
-                        onChange={handleVoiceChange}
+                        onChange={(e) => setSelectedVoice(e.target.value)}
                         className="block appearance-none w-full bg-white border border-gray-300 text-gray-400 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-300"
                     >
                         <option value="" >Select a voice</option>
@@ -213,8 +216,8 @@ const TextToVideo = () => {
                 <br/>
                 <div>
                     <a
-                        href={resultUrl?.result_url}
-                        download={resultUrl?.result_url}
+                        href={resultUrl}
+                        download={resultUrl}
                         target="_blank"
                         rel="noreferrer"
                     >
@@ -229,7 +232,7 @@ const TextToVideo = () => {
                 </div>
             </div>
                     <div className="w-2/3 p-4 m-2 border-4 rounded">
-                        <VideoPlayer video={resultUrl?.result_url}/>
+                        <VideoPlayer video={resultUrl}/>
                     </div>
             </div>
         </div>

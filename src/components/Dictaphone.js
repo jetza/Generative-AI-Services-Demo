@@ -19,13 +19,13 @@ const Dictaphone = () => {
             <p className="pt-4 pb-4">Microphone: {listening ? 'on' : 'off'}</p>
             <button
                 className={requestButtonClass}
-                onClick={SpeechRecognition.startListening}
+                onClick={SpeechRecognition?.startListening}
             >
                 Start
             </button>
             <button
                 className={requestButtonClass}
-                onClick={SpeechRecognition.stopListening}
+                onClick={SpeechRecognition?.stopListening}
             >
                 Stop
             </button>

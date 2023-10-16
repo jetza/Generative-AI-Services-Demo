@@ -215,7 +215,7 @@ const MainPage = () => {
                                     <div className="mt-2 text-lg text-gray-400">
                                         <p>Using the same Web Speech API we can convert text to speech.</p>
                                         <p>This is a react hook for the browser's SpeechSynthesis API. It exposes the options and controls to the underlying SpeechSynthesis in the browser.</p>
-                                        <p>First you need to install react-speech-kit with npm and use it in your application. Examples of usage can be found <a className="font-semibold hover:text-indigo-900" href="https://www.bing.com/images/create/">HERE</a></p>
+                                        <p>First you need to install react-speech-kit with npm and use it in your application. Examples of usage can be found <a className="font-semibold hover:text-indigo-900" href="https://github.com/MikeyParton/react-speech-kit">HERE</a></p>
                                         <br/>
                                         <p>Choose voice, set rate/pitch and then type text you want to convert in speech. Click on SPEAK button for convert.</p>
                                         <br/>

@@ -1,6 +1,6 @@
 import React, {Suspense} from 'react';
-import ReactDOM from 'react-dom/client';
 import './index.css';
+import { render } from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
 import {store} from "./store"
@@ -8,15 +8,15 @@ import Spinner from "./components/Spinner";
 
 const App = React.lazy(() => import("./App"));
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+const root = document.getElementById('root');
+render(
     <React.Fragment>
         <Provider store={store}>
             <Suspense fallback={<Spinner/>}>
                 <App />
             </Suspense>
         </Provider>
-    </React.Fragment>
+    </React.Fragment> , root
 );
 
 // If you want to start measuring performance in your app, pass a function
