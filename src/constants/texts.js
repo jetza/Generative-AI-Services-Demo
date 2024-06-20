@@ -18,7 +18,7 @@ export const conclusionText = 'This application is demonstration of services tha
 //Headers navigation menu
 export const firstNavText = 'Text To Image'
 export const secondNavText = 'Image To Text'
-export const thirdNavText = 'Object Detection'
+export const thirdNavText = 'Object Recognition'
 export const fourthNavText = 'Speech Recognition'
 export const fifthNavText = 'Text to Speech'
 export const sixthNavText = 'Text to Video'

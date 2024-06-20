@@ -151,7 +151,7 @@ const MainPage = () => {
                                             <li><strong>Embeddings</strong> - Encode any text to vectors using state-of-the-art machine learning models.</li>
                                             <li><strong>Face Detect</strong> - Detect faces from any given image.</li>
                                             <li><strong>Image to Text</strong> - State-of-the-art text detection and extraction from images.</li>
-                                            <li><strong>Object Detection</strong> - Fast and accurate image object recognition using the latest machine learning algorithms.</li>
+                                            <li><strong>Object Recognition</strong> - Fast and accurate image object recognition using the latest machine learning algorithms.</li>
                                             <li><strong>Sentiment</strong> - Text sentiment analysis using state-of-the-art algorithms.</li>
                                             <li><strong>Text Similarity</strong> - Compute text similarity score using the latest NLP machine learning models.</li>
                                         </ul>
@@ -170,8 +170,8 @@ const MainPage = () => {
                                 <h2 className={contentHeaderClass}>{thirdNavText}</h2>
                                 <div className="ml-4">
                                     <div className="mt-2 text-lg text-gray-400">
-                                        <p>This is a demonstration of object detection in image uploaded from local machine, using API Ninjas service.</p>
-                                        <p>After uploading an image and click on MAKE REQUEST button, all assumptions for detected objects from an image should appear at the bottom.</p>
+                                        <p>This is a demonstration of object recognition in image uploaded from local machine, using API Ninjas service.</p>
+                                        <p>After uploading an image and click on MAKE REQUEST button, all assumptions for recognized objects from an image should appear at the bottom.</p>
                                         <br/>
                                     <ObjectDetection/>
                                 </div>

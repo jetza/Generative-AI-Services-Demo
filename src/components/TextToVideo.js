@@ -29,7 +29,7 @@ const TextToVideo = () => {
             headers: {
                 accept: 'application/json',
                 'content-type': 'application/json',
-                authorization: 'token'
+                authorization: 'Basic ZEdKeWIyNTZhVzVBWTJsMGRYTXVhSEk6VURXUkJjeXZvZjVvZ3o4OFQxZTRV'
             },
             body: JSON.stringify({
                 script: {
@@ -63,7 +63,7 @@ const TextToVideo = () => {
             method: 'GET',
             headers: {
                 accept: 'application/json',
-                authorization: 'token'
+                authorization: 'Basic ZEdKeWIyNTZhVzVBWTJsMGRYTXVhSEk6VURXUkJjeXZvZjVvZ3o4OFQxZTRV'
             }
         };
         try {
@@ -85,7 +85,7 @@ const TextToVideo = () => {
             method: 'GET',
             headers: {
                 accept: 'application/json',
-                authorization: 'token'
+                authorization: 'Basic ZEdKeWIyNTZhVzVBWTJsMGRYTXVhSEk6VURXUkJjeXZvZjVvZ3o4OFQxZTRV'
             }
         };
         try {
